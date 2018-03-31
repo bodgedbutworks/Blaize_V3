@@ -867,7 +867,7 @@ void draw(){  //<>//
           X[_adress-44].doStuff();  }
           
         else if(_adress >= 51  &&  _adress <= 52){                                         // Nudge +  &  Nudge -
-          if(_data == 1){  O[_adress-44].buttonState =  true; O[_adress-44].doStuff();  }  }
+          if(_data == 1){  O[_adress-45].buttonState =  true; O[_adress-45].doStuff();  }  }
       
         else if(_adress == 254  &&  _data >= 60  &&  _data <= 180){                        // bpm set value
           bpm = _data;  }
