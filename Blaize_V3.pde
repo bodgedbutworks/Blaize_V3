@@ -75,7 +75,7 @@ boolean hideControlWindow = false;
 boolean licenseOK = false;
 
 String pass = "";
-String realPass = "Six";
+String realPass = "BodgedButWorks";
 String PCname;
 String myIP;
 
@@ -147,7 +147,7 @@ void setup(){
   pix[29]  = loadImage("Blaize presets -36.png");
   pix[30]  = loadImage("Blaize presets -15.png");
   pix[31]  = loadImage("Blaize presets -15.png");
-  AeroTraxBall = loadImage("AeroTrax nur Stachelball ROT.png");
+  AeroTraxBall = loadImage("AeroTrax Sphere Logo.png");
   
   
   //Fusion of 16 small images to one large in a separate canvas, which is later "pasted" as an image with image(page1presetPix, x, y)
@@ -706,13 +706,13 @@ void draw(){  //<>//
       textAlign(CENTER);
       textSize(78); fill(0, 200, 255);
       text("Blaize 3", frameSizeX+310, 180);
-      textSize(40);
-      text("(c)", frameSizeX+480, 140);
+      //textSize(40);
+      //text("©", frameSizeX+480, 140);
       textSize(27); fill(255);
       text("Spice up your Beamer.", frameSizeX+314, 208);
       textSize(20); fill(255);
-      text("private License", frameSizeX+320, 350);
-      text("www.aerotrax.de", frameSizeX+320, 380);
+      text("Please subscribe to\nBodgedButWorks on YouTube\nand follow me on instagram!\n", frameSizeX+320, 350);
+      //text("www.aerotrax.de", frameSizeX+320, 380);
       textSize(20); fill(0, 200, 255);
       
       for(int u=0; u<pass.length(); u++){
@@ -756,13 +756,13 @@ void draw(){  //<>//
       textAlign(CENTER);
       textSize(78); fill(0, 200, 255);
       text("Blaize 3", frameSizeX+310, 180);
-      textSize(40);
-      text("(c)", frameSizeX+480, 140);
+      //textSize(40);
+      //text("©", frameSizeX+480, 140);
       textSize(27); fill(255);
       text("Spice up your Beamer.", frameSizeX+314, 208);
       textSize(20); fill(255);
-      text("private License", frameSizeX+320, 350);
-      text("www.aerotrax.de", frameSizeX+320, 380);
+      text("Please subscribe to\nBodgedButWorks on YouTube\nand follow me on instagram!", frameSizeX+320, 350);
+      //text("www.aerotrax.de", frameSizeX+320, 380);
       textSize(20); fill(0, 200, 255);
       text("Strg + <^v>:  Change window size", frameSizeX+345, 550);
       //text("Shift + arrow keys: "    ,frameSizeX+325,590);
