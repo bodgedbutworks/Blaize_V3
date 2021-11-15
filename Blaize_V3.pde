@@ -1235,35 +1235,38 @@ void keyPressed() {
   }
 
   if (key == CODED) {
-
     if (keyCode == KeyEvent.VK_END) {
       pass = "";
       lockscreen = true;
     }
 
-    //if(keyCode == SHIFT){
-    //  editFramePos = true;  } else if (keyCode == CONTROL) {
-    //  editFrameSize = true;
+    //else if(keyCode == SHIFT){
+    //  editFramePos = true;
     //}
+    
+    else if (keyCode == CONTROL  ||  keyCode == KeyEvent.VK_META) {  /* Nik */
+      editFrameSize = true;
+    }
 
     //if(editFramePos == true  &&  lockscreen == false){
     //  if     (keyCode == LEFT) { framePosX = framePosX-10; }
     //  else if(keyCode == RIGHT){ framePosX = framePosX+10; }
     //  else if(keyCode == UP)   { framePosY = framePosY-10; }
     //  else if(keyCode == DOWN) { framePosY = framePosY+10; }
-    //} else if (editFrameSize == true) {
-    if     (keyCode == LEFT) { 
-      frameSizeX = frameSizeX-10;
-    } else if (keyCode == RIGHT) { 
-      frameSizeX = frameSizeX+10;
-    } else if (keyCode == UP) { 
-      frameSizeY = frameSizeY-10;
-    } else if (keyCode == DOWN) { 
-      frameSizeY = frameSizeY+10;
+    
+    } if (editFrameSize) {
+      if(keyCode == LEFT) { 
+        frameSizeX = frameSizeX-10;
+      } else if (keyCode == RIGHT) { 
+        frameSizeX = frameSizeX+10;
+      } else if (keyCode == UP) { 
+        frameSizeY = frameSizeY-10;
+      } else if (keyCode == DOWN) { 
+        frameSizeY = frameSizeY+10;
+      }
+      surface.setSize(frameSizeX+cmdWindowWidth, frameSizeY);
     }
-    surface.setSize(frameSizeX+cmdWindowWidth, frameSizeY);
-    //}
-  }
+  //}
 }
 
 
@@ -1273,7 +1276,7 @@ void keyReleased() {
     //if(keyCode == SHIFT){
     //  editFramePos = false;  }
 
-    if (keyCode == CONTROL) {
+    if (keyCode == CONTROL  ||  keyCode == KeyEvent.VK_META) {  /* Nik */
       editFrameSize = false;
     }
   }
