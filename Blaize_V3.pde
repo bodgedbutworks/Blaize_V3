@@ -1244,7 +1244,7 @@ void keyPressed() {
     //  editFramePos = true;
     //}
     
-    else if (keyCode == CONTROL  ||  keyCode == KeyEvent.VK_META) {  /* Nik */
+    else if (keyCode == CONTROL  ||  keyCode == KeyEvent.VK_META) {
       editFrameSize = true;
     }
 
@@ -1276,7 +1276,7 @@ void keyReleased() {
     //if(keyCode == SHIFT){
     //  editFramePos = false;  }
 
-    if (keyCode == CONTROL  ||  keyCode == KeyEvent.VK_META) {  /* Nik */
+    if (keyCode == CONTROL  ||  keyCode == KeyEvent.VK_META) {
       editFrameSize = false;
     }
   }
