@@ -28,6 +28,7 @@ jobs:
       # Move all files EXCEPT the newly created folder into the folder
       - name: Move sketch files to sketch folder
         run:
+          mkdir Blaize_V3;
           shopt -s extglob;
           mv !Blaize_V3 Blaize_V3;
           ls -al;
