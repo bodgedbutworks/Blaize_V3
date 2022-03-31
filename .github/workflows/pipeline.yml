@@ -25,10 +25,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
+      # Move all files EXCEPT the newly created folder into the folder
       - name: Move sketch files to sketch folder
         run:
           mkdir Blaize_V3;
-          mv !(Blaize_V3) Blaize_V3;  # Move all files EXCEPT the newly created folder into the folder
+          mv !(Blaize_V3) Blaize_V3;
           ls -al;
           ls -al Blaize_V3;
           
