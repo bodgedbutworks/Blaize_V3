@@ -64,7 +64,8 @@ jobs:
           cd processing-3.5.4;
           ls -al;
       
-      - name: Build App
+      - name: Build & Export App
         run:
           cd processing-3.5.4;
           ./processing-java --sketch=../Blaize_V3 --build;
+          ./processing-java --sketch=../Blaize_V3 --platform=windows --export;
