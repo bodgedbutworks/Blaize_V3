@@ -1,8 +1,8 @@
-import processing.opengl.*; //<>// //<>// //<>//
+//import processing.opengl.*; //<>// //<>// //<>//
 import java.awt.event.KeyEvent;
-import processing.video.*;
+//import processing.video.*;
 import java.awt.AWTException;
-import processing.core.*;
+//import processing.core.*;
 import processing.net.*;
 import java.net.InetAddress;
 
