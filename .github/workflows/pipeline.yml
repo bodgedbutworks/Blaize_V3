@@ -33,7 +33,7 @@ jobs:
       
       - name: ll
         run:
-          cd processing-3.5.4/processing-java;
+          cd processing-3.5.4;
           ls -al;
       
       - name: Build App
