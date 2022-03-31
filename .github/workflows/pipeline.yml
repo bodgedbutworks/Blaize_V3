@@ -69,7 +69,32 @@ jobs:
           cd processing-3.5.4;
           ./processing-java --sketch=../Blaize_V3 --build;
       
-      - name: Export App
-        run:
-          cd processing-3.5.4;
-          ./processing-java --sketch=../Blaize_V3 --platform=linux --export;
+      #- name: Export App
+      #  run:
+      #    cd processing-3.5.4;
+      #    ./processing-java --sketch=../Blaize_V3 --platform=windows --export;
+          
+      - name: Zip App
+        run: touch 'ImDifferent.txt'
+      
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: true
+          prerelease: false
+
+      - name: Upload Release Asset
+        id: upload-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+          asset_path: ImDifferent.txt
+          asset_name: ImDifferentAsset
+          asset_content_type: application/txt
