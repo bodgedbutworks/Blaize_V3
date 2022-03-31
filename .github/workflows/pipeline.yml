@@ -38,7 +38,7 @@ jobs:
       
       - name: Build App
         run:
-          processing-java --sketch=../../Blaize_V3.pde --platform=windows --export
+          ./processing-java --sketch=../../Blaize_V3.pde --platform=windows --export
 
 
 
