@@ -78,6 +78,7 @@ jobs:
         run:
           ls -al;
           touch 'ImDifferent.txt';
+          ls -al;
       
       - name: Create Release
         id: create_release
