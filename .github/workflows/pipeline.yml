@@ -46,8 +46,10 @@ jobs:
         run:
           wget https://github.com/processing/processing-video/archive/refs/tags/latest-processing3.tar.gz;
           tar zxvf latest-processing3.tar.gz;
+          mkdir libraries;
+          mv processing-video-latest-processing3 libraries/video;
           ls -al;
-          cd processing-video-latest-processing3;
+          cd libraries;
           ls -al;
       
       - name: ll
