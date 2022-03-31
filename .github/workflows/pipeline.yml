@@ -41,6 +41,14 @@ jobs:
       
       - name: Unpack Processing
         run: tar zxvf processing-3.5.4-linux64.tgz
+        
+      - name: Install video library
+        run:
+          wget https://github.com/processing/processing-video/archive/refs/tags/latest-processing3.tar.gz;
+          tar zxvf latest-processing3.tar.gz;
+          ls -al;
+          cd processing-video-latest-processing3;
+          ls -al;
       
       - name: ll
         run:
