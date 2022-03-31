@@ -26,12 +26,11 @@ jobs:
       - uses: actions/checkout@v3
 
       # Move all files EXCEPT the newly created folder into the folder
+      # grep -v inverts selection
       - name: Move sketch files to sketch folder
         run:
           mkdir Blaize_V3;
-          shopt -s extglob dotglob;
-          mv !Blaize_V3 Blaize_V3;
-          shopt -u extglob dotglob;
+          ls | grep -v Blaize_V3 | xargs mv --taget-directory=Blaize_V3;
           ls -al;
           ls -al Blaize_V3;
           
