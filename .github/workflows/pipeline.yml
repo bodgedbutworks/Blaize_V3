@@ -25,6 +25,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
+      - name: Move sketch files to sketch folder
+        run:
+          mkdir Blaize_V3;
+          mv * Blaize_V3;
+          ls -al;
+          ls -al Blaize_V3;
+          
       - name: Download processing
         run: wget https://github.com/processing/processing/releases/download/processing-0270-3.5.4/processing-3.5.4-linux64.tgz
       
@@ -39,12 +46,4 @@ jobs:
       - name: Build App
         run:
           cd processing-3.5.4;
-          ./processing-java --sketch=../Blaize_V3.pde --platform=windows --export;
-
-
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run:
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          ./processing-java --sketch=../Blaize_V3 --platform=windows --export;
