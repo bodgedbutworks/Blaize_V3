@@ -29,7 +29,9 @@ jobs:
       - name: Move sketch files to sketch folder
         run:
           mkdir Blaize_V3;
-          mv --target-directory=Blaize_V3 *;
+          shopt -s extglob dotglob;
+          mv !Blaize_V3 Blaize_V3;
+          shopt -u extglob dotglob;
           ls -al;
           ls -al Blaize_V3;
           
