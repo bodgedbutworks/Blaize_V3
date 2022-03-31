@@ -40,7 +40,13 @@ jobs:
         run: wget https://github.com/processing/processing/releases/download/processing-0270-3.5.4/processing-3.5.4-linux64.tgz
       
       - name: Unpack Processing
-        run: tar zxvf processing-3.5.4-linux64.tgz
+        run:
+          tar zxvf processing-3.5.4-linux64.tgz;
+          cd processing-3.5.4;
+          ./install.sh;
+          ls -al;
+          cd ..;
+          ls -al;
         
       - name: Install video library
         run:
