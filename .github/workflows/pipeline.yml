@@ -52,6 +52,7 @@ jobs:
       
       - name: ll
         run:
+          ls -al;
           cd processing-3.5.4;
           ls -al;
       
