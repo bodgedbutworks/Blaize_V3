@@ -26,14 +26,12 @@ jobs:
       - uses: actions/checkout@v3
 
       # Move all files EXCEPT the newly created folder into the folder
-      # shopt -s dotglob  makes mv recognize hidden (e.g. ".gitignore") files
       # grep -v  inverts selection
       # ^Blaize_V3$  selects only "Blaize_V3" (directory) and not "Blaize_V3.pde" (file)
       - name: Move sketch files to sketch folder
         run:
           mkdir Blaize_V3;
-          shopt -s dotglob;
-          ls | grep -v ^Blaize_V3$ | xargs mv --target-directory=Blaize_V3;
+          ls -a | grep -v ^Blaize_V3$ | xargs mv --target-directory=Blaize_V3;
           ls -al;
           ls -al Blaize_V3;
           
