@@ -75,7 +75,9 @@ jobs:
       #    ./processing-java --sketch=../Blaize_V3 --platform=windows --export;
           
       - name: Zip App
-        run: touch 'ImDifferent.txt'
+        run:
+          ls -al;
+          touch 'ImDifferent.txt';
       
       - name: Create Release
         id: create_release
@@ -97,4 +99,4 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
           asset_path: ImDifferent.txt
           asset_name: ImDifferentAsset
-          asset_content_type: application/txt
+          asset_content_type: text/html
