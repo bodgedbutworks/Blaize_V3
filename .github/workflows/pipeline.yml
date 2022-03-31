@@ -32,7 +32,13 @@ jobs:
         run: tar zxvf processing-3.5.4-linux64.tgz
       
       - name: ll
-        run: ls -al
+        run:
+          cd processing-3.5.4/processing-java
+          ls -al
+      
+      - name: Build App
+        run:
+          processing-java --sketch=../../Blaize_V3.pde --platform=windows --export
 
 
 
