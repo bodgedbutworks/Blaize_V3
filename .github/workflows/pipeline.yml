@@ -27,6 +27,8 @@ jobs:
 
       # Move all files EXCEPT the newly created folder into the folder
       # grep -v  inverts selection
+      # grep -E  uses regex
+      # '^Blaize_V3$|\.|\..'  matches "Blaize_V3", "." and ".." directories
       # ^Blaize_V3$  selects only "Blaize_V3" (directory) and not "Blaize_V3.pde" (file)
       - name: Move sketch files to sketch folder
         run:
