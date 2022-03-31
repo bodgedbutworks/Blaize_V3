@@ -31,7 +31,7 @@ jobs:
       - name: Move sketch files to sketch folder
         run:
           mkdir Blaize_V3;
-          ls -a | grep -v ^Blaize_V3$ | xargs mv --target-directory=Blaize_V3;
+          ls -a | grep -v -E '^Blaize_V3$|\.|\..' | xargs mv --target-directory=Blaize_V3;
           ls -al;
           ls -al Blaize_V3;
           
