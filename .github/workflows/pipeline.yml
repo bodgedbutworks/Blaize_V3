@@ -48,15 +48,15 @@ jobs:
           cd ..;
           ls -al;
         
-      - name: Install video library
-        run:
-          wget https://github.com/processing/processing-video/archive/refs/tags/latest-processing3.tar.gz;
-          tar zxvf latest-processing3.tar.gz;
-          mkdir libraries;
-          mv processing-video-latest-processing3 libraries/video;
-          ls -al;
-          cd libraries;
-          ls -al;
+      #- name: Install video library
+      #  run:
+      #    wget https://github.com/processing/processing-video/archive/refs/tags/latest-processing3.tar.gz;
+      #    tar zxvf latest-processing3.tar.gz;
+      #    mkdir libraries;
+      #    mv processing-video-latest-processing3 libraries/video;
+      #    ls -al;
+      #    cd libraries;
+      #    ls -al;
       
       - name: ll
         run:
@@ -64,8 +64,12 @@ jobs:
           cd processing-3.5.4;
           ls -al;
       
-      - name: Build & Export App
+      - name: Build App
         run:
           cd processing-3.5.4;
           ./processing-java --sketch=../Blaize_V3 --build;
-          ./processing-java --sketch=../Blaize_V3 --platform=windows --export;
+      
+      - name: Export App
+        run:
+          cd processing-3.5.4;
+          ./processing-java --sketch=../Blaize_V3 --platform=linux --export;
