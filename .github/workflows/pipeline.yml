@@ -30,7 +30,7 @@ jobs:
         run:
           mkdir Blaize_V3;
           shopt -s extglob;
-          mv !Blaize_V3 Blaize_V3;
+          mv !(Blaize_V3) Blaize_V3;
           ls -al;
           ls -al Blaize_V3;
           
