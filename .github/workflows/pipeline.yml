@@ -26,14 +26,13 @@ jobs:
       - uses: actions/checkout@v3
 
       # Move all files EXCEPT the newly created folder into the folder
-      # grep -v  inverts selection
       # grep -E  uses regex
       # '^Blaize_V3$|\.|\..'  matches "Blaize_V3", "." and ".." directories
       # ^Blaize_V3$  selects only "Blaize_V3" (directory) and not "Blaize_V3.pde" (file)
       - name: Move sketch files to sketch folder
         run:
           mkdir Blaize_V3;
-          ls -a | grep -v -E '^Blaize_V3$|\.|\..' | xargs mv --target-directory=Blaize_V3;
+          ls -a | grep --invert-match --extended-regexp '^Blaize_V3$|^\.$|^\.\.$' | xargs mv --target-directory=Blaize_V3;
           ls -al;
           ls -al Blaize_V3;
           
