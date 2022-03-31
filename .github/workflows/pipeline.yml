@@ -77,7 +77,7 @@ jobs:
       - name: Zip App
         run:
           ls -al;
-          touch 'ImDifferent.txt';
+          echo 'There You Are!' >> ImDifferent.txt;
           ls -al;
       
       - name: Create Release
