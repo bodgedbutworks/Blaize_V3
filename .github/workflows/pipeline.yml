@@ -51,7 +51,7 @@ jobs:
           ls -al;
       
       - name: Install 32bit libs
-        run: apt update && apt install lib32z1
+        run: sudo apt update && sudo apt install lib32z1
       
       # - name: Install video library
       #   run:
