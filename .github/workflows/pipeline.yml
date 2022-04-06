@@ -49,9 +49,12 @@ jobs:
           ls -al;
           cd ..;
           ls -al;
-        
-      #- name: Install video library
-      #  run:
+      
+      - name: Install 32bit libs
+        run: apt update && apt install lib32z1
+      
+      # - name: Install video library
+      #   run:
       #    wget https://github.com/processing/processing-video/archive/refs/tags/latest-processing3.tar.gz;
       #    tar zxvf latest-processing3.tar.gz;
       #    mkdir libraries;
@@ -71,16 +74,14 @@ jobs:
           cd processing-3.5.4;
           ./processing-java --sketch=../Blaize_V3 --build;
       
-      #- name: Export App
-      #  run:
-      #    cd processing-3.5.4;
-      #    ./processing-java --sketch=../Blaize_V3 --platform=windows --export;
+      - name: Export App
+        run:
+         cd processing-3.5.4;
+         ./processing-java --sketch=../Blaize_V3 --output=../windows-build --platform=windows --export;
           
       - name: Zip App
         run:
-          ls -al;
-          echo 'There You Are!' >> ImDifferent.txt;
-          ls -al;
+          zip -r windows.zip ./windows-build
       
       - name: Create Release
         id: create_release
@@ -100,6 +101,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-          asset_path: ImDifferent.txt
-          asset_name: ImDifferentAsset
+          asset_path: windows.zip
+          asset_name: Blaize_V3_Windwos
           asset_content_type: text/html
