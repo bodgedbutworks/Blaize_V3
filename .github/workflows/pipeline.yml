@@ -6,9 +6,9 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ pipline-dev ]
+    branches: [ pipeline-dev ]
   pull_request:
-    branches: [ pipline-dev ]
+    branches: [ pipeline-dev ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -28,9 +28,10 @@ jobs:
       # grep -E  uses regex
       # '^Blaize_V3$|\.|\..'  matches "Blaize_V3", "." and ".." directories
       # ^Blaize_V3$  selects only "Blaize_V3" (directory) and not "Blaize_V3.pde" (file)
-      # xargs -J letsyou specify a variable (e.g. "%") which gets replaced by the input args
-      #ls -a | grep --invert-match --extended-regexp '^Blaize_V3$|^\.$|^\.\.$' | xargs mv --target-directory=Blaize_V3; FOR UBUNTU
-      #ls -a | grep --invert-match --extended-regexp '^Blaize_V3$|^\.$|^\.\.$' | xargs -J % mv % Blaize_V3; FOR MACOS
+      # xargs -J lets you specify a variable (e.g. "%") which gets replaced by the input args
+      #
+      # FOR UBUNTU: ls -a | grep --invert-match --extended-regexp '^Blaize_V3$|^\.$|^\.\.$' | xargs mv --target-directory=Blaize_V3;
+      # FOR MACOS:  ls -a | grep --invert-match --extended-regexp '^Blaize_V3$|^\.$|^\.\.$' | xargs -J % mv % Blaize_V3;
       - name: Move sketch files to sketch folder
         run:
           mkdir Blaize_V3;
@@ -69,10 +70,10 @@ jobs:
           cd processing-3.5.4;
           ls -al;
       
-      - name: Build App
-        run:
-          cd processing-3.5.4;
-          ./processing-java --sketch=../Blaize_V3 --build;
+      #- name: Build App
+      #  run:
+      #    cd processing-3.5.4;
+      #    ./processing-java --sketch=../Blaize_V3 --build;
       
       - name: Export App
         run:
