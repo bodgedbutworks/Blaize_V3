@@ -64,12 +64,6 @@ jobs:
       #    cd libraries;
       #    ls -al;
       
-      - name: ll
-        run:
-          ls -al;
-          cd processing-3.5.4;
-          ls -al;
-      
       #- name: Build App
       #  run:
       #    cd processing-3.5.4;
@@ -78,11 +72,17 @@ jobs:
       - name: Export App
         run:
          cd processing-3.5.4;
-         ./processing-java --sketch=../Blaize_V3 --output=../windows-build --platform=windows --export;
+         ./processing-java --sketch=../Blaize_V3 --output=../Blaize_V3_Windows --platform=windows --export;
           
       - name: Zip App
         run:
-          zip -r windows.zip ./windows-build
+          zip -r Blaize_V3_Windows.zip Blaize_V3_Windows/
+      
+      - name: ll
+        run:
+          ls -al;
+          cd processing-3.5.4;
+          ls -al;
       
       - name: Create Release
         id: create_release
@@ -102,6 +102,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-          asset_path: windows.zip
+          asset_path: Blaize_V3_Windows.zip
           asset_name: Blaize_V3_Windows.zip
           asset_content_type: application/zip
