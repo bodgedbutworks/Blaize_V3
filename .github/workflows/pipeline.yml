@@ -73,6 +73,12 @@ jobs:
         run:
          cd processing-3.5.4;
          ./processing-java --sketch=../Blaize_V3 --output=../Blaize_V3_Windows --platform=windows --export;
+      
+      - name: Remove unnecessary files
+        run:
+         cd Blaize_V3_Windows;
+         rm -r source;
+         ls -al;
           
       - name: Zip App
         run:
