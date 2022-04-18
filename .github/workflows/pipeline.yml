@@ -16,15 +16,18 @@ jobs:
   build_macos:
     runs-on: macos-latest
     steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3  
       - name: Download and install Processing 4 beta
         run: |
           wget -q https://github.com/processing/processing4/releases/download/processing-1282-4.0b7/processing-4.0b7-macos-x64.zip -O ~/Downloads/Processing.zip
           tar -xf ~/Downloads/Processing.zip -C /Applications/
           chmod +x $GITHUB_WORKSPACE/Blaize_V3/.github/workflows/processing-java
       - name: macos-x86_64 export 
-        run: $GITHUB_WORKSPACE/Blaize_V3/.github/workflows/processing-java --sketch=../Blaize_V3 --output=../macos-x86_64 --variant=macos-x86_64 --export
+        run: $GITHUB_WORKSPACE/Blaize_V3/.github/workflows/processing-java --sketch=$GITHUB_WORKSPACE/Blaize_V3 --output=$GITHUB_WORKSPACE/macos-x86_64 --variant=macos-x86_64 --export
   # This workflow contains a single job called "build"
   build:
+    if: ${{ false }}
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
