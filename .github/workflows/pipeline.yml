@@ -16,22 +16,31 @@ jobs:
   build_macos:
     runs-on: macos-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v3
         with: 
           path: Blaize_V3  
-      # - name: Move sketch files to sketch folder
-      #   run:
-      #     mkdir Blaize_V3;
-      #     ls -a | grep --invert-match --extended-regexp '^Blaize_V3$|^\.$|^\.\.$' | xargs -J % mv % Blaize_V3;
+
+      # Install dependencies
       - name: Download and install Processing 4 beta
         run: |
           wget -q https://github.com/processing/processing4/releases/download/processing-1282-4.0b7/processing-4.0b7-macos-x64.zip -O ~/Downloads/Processing.zip
           tar -xf ~/Downloads/Processing.zip -C /Applications/
           chmod +x $GITHUB_WORKSPACE/Blaize_V3/.github/workflows/processing-java
+      
+      # Export for different platforms
       - name: macos-x86_64 export 
         run: $GITHUB_WORKSPACE/Blaize_V3/.github/workflows/processing-java --sketch=$GITHUB_WORKSPACE/Blaize_V3 --output=$GITHUB_WORKSPACE/macos-x86_64 --variant=macos-x86_64 --export
+      - name: macos-aarch64 export
+        run: $GITHUB_WORKSPACE/Blaize_V3/.github/workflows/processing-java --sketch=$GITHUB_WORKSPACE/Blaize_V3 --output=$GITHUB_WORKSPACE/macos-aarch64 --variant=macos-aarch64 --export
+      - name: linux-amd64 export
+        run: $GITHUB_WORKSPACE/Blaize_V3/.github/workflows/processing-java --sketch=$GITHUB_WORKSPACE/Blaize_V3 --output=$GITHUB_WORKSPACE/linux-amd64 --variant=linux-amd64 --export
+      - name: linux-arm export
+        run: $GITHUB_WORKSPACE/Blaize_V3/.github/workflows/processing-java --sketch=$GITHUB_WORKSPACE/Blaize_V3 --output=$GITHUB_WORKSPACE/linux-arm --variant=linux-arm --export
+      - name: linux-aarch64 export
+        run: $GITHUB_WORKSPACE/Blaize_V3/.github/workflows/processing-java --sketch=$GITHUB_WORKSPACE/Blaize_V3 --output=$GITHUB_WORKSPACE/linux-aarch64 --variant=linux-aarch64 --export
+
   # This workflow contains a single job called "build"
   build:
     if: ${{ false }}
