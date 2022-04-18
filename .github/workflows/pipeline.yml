@@ -16,8 +16,13 @@ jobs:
   build_macos:
     runs-on: macos-latest
     steps:
-      - name: Install processing on macos
-        run: ls -la /Applications
+      - name: Download and install Processing 4 beta
+        run: |
+          wget -q https://github.com/processing/processing4/releases/download/processing-1282-4.0b7/processing-4.0b7-macos-x64.zip -O ~/Downloads/Processing.zip
+          tar -xf ~/Downloads/Processing.zip -C /Applications/
+          chmod +x $GITHUB_WORKSPACE/Blaize_V3/.github/workflows/processing-java
+      - name: macos-x86_64 export 
+        run: $GITHUB_WORKSPACE/Blaize_V3/.github/workflows/processing-java --sketch=../Blaize_V3 --output=../macos-x86_64 --variant=macos-x86_64 --export
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
