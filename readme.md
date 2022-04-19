@@ -4,10 +4,10 @@ Software to turn your projector into a safe disco laser \
 [Blaize 3 HowTo](https://www.youtube.com/watch?v=TjnYWlusAS8)
 
 # Releases
-You can find prebuild binaries for each release on the [release page](https://github.com/bodgedbutworks/Blaize_V3/releases).
+You can find prebuilt binaries for each release on the [release page](https://github.com/bodgedbutworks/Blaize_V3/releases).
 > **Note for mac users**: \
-> If you download the prebuild releases they are considered suspicious and get a quarantine flag. This results in errors like `The application is corrupted and should be removed` and the application starting.
-> This can be preventet by either installing Processing yourself and running the program from source or by removing the quarantine flag from the app.
+> If you download the prebuilt releases they are considered suspicious and receive a quarantine flag. This results in errors like `The application is corrupted and should be removed` and the application not starting.
+> This can be prevented by either installing Processing (3 or 4) yourself and running the program from source or by removing the quarantine flag from the app.
 > To remove the flag open a terminal window and execute the following command 
 > ```
 >  sudo xattr -d -r com.apple.quarantine <path_to_your_Blaize_V3.app>
