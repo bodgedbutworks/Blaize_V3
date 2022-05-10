@@ -72,7 +72,6 @@ boolean editFramePos = false;
 boolean editFrameSize = false;
 boolean dontShowStartupScreenAnymore = false;
 boolean hideControlWindow = false;
-boolean licenseOK = false;
 
 String pass = "";
 String realPass = "BodgedButWorks";
@@ -217,8 +216,6 @@ void setup() {
   O[6] = new onoffbutton(color(255, 0, 0), 2*155+5, 5*85+5, 150, 80, 0, "Nudge +");
   O[7] = new onoffbutton(color(255, 0, 0), 1*155+5, 5*85+5, 150, 80, 0, "Nudge -");
   //O[8] = new onoffbutton(color(255,0,0),1*155+5,4*85+5,150,80,0,"Hide (h)");
-
-  checkLicense();  //sets "licenseOK" variable to true or false.
 } 
 
 
@@ -957,13 +954,6 @@ void draw() {
     }
 
     text("Please enter Password", frameSizeX+320, 550);
-
-    if (!licenseOK) {
-      textSize(frameSizeY/30); 
-      fill(255, 0, 0);
-      text("! License Error !", frameSizeX/2, frameSizeY/2);
-      noLoop();
-    }
 
     try {                                // Get IP Adress, Handle Exceptions
       inet = InetAddress.getLocalHost();
