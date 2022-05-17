@@ -7,11 +7,13 @@ Software to turn your projector into a safe disco laser \
 You can find prebuilt binaries for each release on the [release page](https://github.com/bodgedbutworks/Blaize_V3/releases).
 > **Note for mac users**: \
 > If you download the prebuilt releases they are considered suspicious and receive a quarantine flag. This results in errors like `The application is corrupted and should be removed` and the application not starting.
-> This can be prevented by either installing Processing (3 or 4) yourself and running the program from source or by removing the quarantine flag from the app.
-> To remove the flag open a terminal window and execute the following command 
-> ```
->  sudo xattr -d -r com.apple.quarantine <path_to_your_Blaize_V3.app>
-> ``` 
+> This can be prevented by either installing Processing (3 or 4) yourself and running the program from source OR (quicker) by removing the quarantine flag from the app.
+> To remove the flag open a terminal window (Spotlight search [CMD+Space], type "Term...") and execute the following commands: \
+> __Navigate to where Blaize was downloaded. You can partially type the directory names (e.g. "Blai...") and press TAB multiple times to autocomplete:__ \
+> ```cd ~/Downloads/Blaize_v3.0.1_macos-x86_64``` \
+> __Remove quarantine flag:__ \
+> ```sudo xattr -d -r com.apple.quarantine Blaize_V3.app```
+
 # Users
 You'll need a standard projector and a fog machine. Head over to [Blaize 3 Demo](https://www.youtube.com/watch?v=ziG_0-8F9Vg) to see what Blaize can do and to [Blaize 3 HowTo](https://www.youtube.com/watch?v=TjnYWlusAS8) to learn how to download and use it. Have fun and feel free to share some pictures/videos when it's working!
 
