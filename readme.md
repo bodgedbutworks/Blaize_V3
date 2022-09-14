@@ -15,3 +15,10 @@ If you have any questions or requests, you can contact me via email (bodgedbutwo
 
 You will need Processing 3 to run the code: https://processing.org/download
 If you're missing libraries, you can simply install them using Processing's built-in library manager.
+<br>
+<br>
+
+<h2>Why isn't the Android remote control app open source?</h2>
+...because it's a pile of ravioli code from my early beginnings and I don't want to hurt your eyes.
+If you like the app AND you REALLY want to spend time cleaning up smelly code, then feel free to message me an I can commit <del>a crime</del> the app's source code.
+
