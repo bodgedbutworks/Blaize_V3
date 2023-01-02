@@ -93,7 +93,7 @@ jobs:
 
           gh release upload ${GITHUB_REF#refs/tags/} 
           $GITHUB_WORKSPACE/Blaize_${GITHUB_REF#refs/tags/}_windows.zip
-          $GITHUB_WORKSPACE/Blaize_V3/Android App/bodgedbutworks.blaize_3_and_vidmap_remote.apk
+          $GITHUB_WORKSPACE/Blaize_V3/android-app/bodgedbutworks.blaize_3_and_vidmap_remote.apk
           --clobber
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
