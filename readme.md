@@ -23,6 +23,11 @@ Pro tip: Set the **contrast** and **saturation** of your projector to maximum fo
 Blaize 3 is currently not under active development, although I plan to integrate some feature requests from users in the YouTube comments in 2022 and unclutter the code in general. Feel free to integrate your own ideas or even re-structure the code. It's not the cleanest, as it started as one of my first Java/Processing projects.
 If you have any questions or requests, you can contact me via email (bodgedbutworks<(at)>aerotrax<(dot)>de) or on Instagram (@bodgedbutworks).
 
-You will need Processing 3 to run the code: [Processing download](https://processing.org/download)
-
+You will need Processing 3 to run the code: https://processing.org/download
 If you're missing libraries, you can simply install them using Processing's built-in library manager.
+<br>
+<br>
+
+<h2>Why isn't the Android remote control app open source?</h2>
+...because it's a pile of ravioli code from my early beginnings and I don't want to hurt your eyes.
+If you like the app AND you REALLY want to spend time cleaning up smelly code, then feel free to message me an I can commit <del>a crime</del> the app's source code.
